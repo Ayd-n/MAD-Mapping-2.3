@@ -65,11 +65,9 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode,int resultCode,Intent intent)
     {
 
-        if (requestCode == 0)
-        {
+        if (requestCode == 0) {
 
-            if (resultCode == RESULT_OK)
-            {
+            if (resultCode == RESULT_OK) {
                 Bundle extras = intent.getExtras();
                 boolean hikebikemap = extras.getBoolean("com.example.hikebikemap");
                 if (hikebikemap == true) {
@@ -78,17 +76,16 @@ public class MainActivity extends AppCompatActivity
                     mv.setTileSource(TileSourceFactory.MAPNIK);
                 }
             }
-            else if (requestCode == 1)
-            {
-                if (resultCode == RESULT_OK)
-                {
-                        Bundle extras = intent.getExtras();
-                        double latitude = extras.getDouble("com.example.setlat");
-                        double longitude = extras.getDouble("com.example.setlon");
-                        mv.getController().setCenter(new GeoPoint(latitude, longitude));
+        }
+        else if (requestCode == 1)
+        {
+                if (resultCode == RESULT_OK) {
+                    Bundle extras = intent.getExtras();
+                    double latitude = extras.getDouble("com.example.setlat");
+                    double longitude = extras.getDouble("com.example.setlon");
+                    mv.getController().setCenter(new GeoPoint(latitude, longitude));
 
                 }
-            }
         }
     }
 }

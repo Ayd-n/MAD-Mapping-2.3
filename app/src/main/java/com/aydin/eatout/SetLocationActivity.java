@@ -2,6 +2,7 @@ package com.aydin.eatout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
@@ -28,6 +29,9 @@ public class SetLocationActivity extends AppCompatActivity implements OnClickLis
 
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
+
+        Log.d("mapping", "latitude=" + latitude);
+        Log.d("mapping", "longitude=" + longitude);
 
         bundle.putDouble("com.example.setlat", latitude);
         bundle.putDouble("com.example.setlon", longitude);
